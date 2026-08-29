@@ -6,7 +6,7 @@
 <meta name="color-scheme" content="light only">
 <link rel="icon" href="favicon.ico">
 <title>Dalsu Choi</title>
-<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=DM+Mono:wght@400;500&family=Inter:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -21,7 +21,6 @@
     --border: #E2E5ED;
     --font-display: 'Crimson Pro', serif;
     --font-body: 'Inter', sans-serif;
-    --font-mono: 'DM Mono', monospace;
   }
 
   html {
@@ -133,7 +132,7 @@
     background: #FDFDFE;
     border: 1px solid var(--border);
     border-radius: 10px;
-    font-family: var(--font-mono);
+    font-family: var(--font-display);
     font-size: 0.98rem;
     color: var(--text);
     margin-bottom: 2.5rem;
@@ -143,16 +142,18 @@
   }
   .sql-body {
     padding: 16px 20px 18px;
-    line-height: 2.0;
+    line-height: 1.8;
     white-space: normal;
     overflow-wrap: break-word;
-    font-size: clamp(1.0rem, 3.4vw, 1.12rem);
+    font-size: clamp(1.18rem, 3.9vw, 1.38rem);
     overflow-x: auto;
     border-radius: 10px;
   }
   .sql-body .nowrap { white-space: nowrap; }
+  .aff-full { display: inline; }
+  .aff-short { display: none; }
   .op { color: #94A3B8; }
-  .kw { color: #3730A3; font-weight: 500; }
+  .kw { color: #3730A3; font-weight: 600; }
   .str { color: #0E7490; }
 
   /* SECTIONS */
@@ -295,6 +296,9 @@
   }
 
   @media (max-width: 768px) {
+    .aff-full { display: none; }
+    .aff-short { display: inline; }
+
     nav { padding: 0 4vw; justify-content: flex-end; }
     .nav-toggle { display: flex; }
 
@@ -387,12 +391,12 @@
     <div class="sql-body">
       <span class="nowrap"><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> database_researcher</span><br>
       <span class="kw">WHERE</span> name <span class="op">=</span> <span class="str">'Dalsu Choi'</span><br>
-      &nbsp;&nbsp;<span class="kw">AND</span> affiliation <span class="op">=</span> <span class="str">'HUFS'</span><br>
-      &nbsp;&nbsp;<span class="kw">AND</span> interests <span class="op">@&gt;</span> <span class="kw">ARRAY</span>[<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="str">'Query Optimization'</span>,<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="str">'AI for Data Management'</span>,<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="str">'Data Management for AI'</span><br>
-      &nbsp;&nbsp;];
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">AND</span> affiliation <span class="op">=</span> <span class="str"><span class="aff-full">'Hankuk University of Foreign Studies'</span><span class="aff-short">'HUFS'</span></span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">AND</span> interests <span class="op">@&gt;</span> <span class="kw">ARRAY</span>[<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">'Query Optimization'</span>,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">'AI for Data Management'</span>,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">'Data Management for AI'</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;];
     </div>
   </div>
 </section>
