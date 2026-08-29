@@ -131,23 +131,27 @@
 
   .hero-sql {
     display: inline-block;
+    background: #FDFDFE;
+    border: 1px solid var(--border);
+    border-radius: 10px;
     font-family: var(--font-mono);
     font-size: 0.98rem;
     color: var(--text);
     margin-bottom: 2.5rem;
+    overflow: hidden;
+    box-shadow: 0 12px 32px -12px rgba(26,26,46,0.18), 0 2px 6px -2px rgba(26,26,46,0.08);
     max-width: 100%;
   }
   .sql-body {
-    padding: 0;
+    padding: 16px 20px 18px;
     line-height: 2.0;
     white-space: normal;
     overflow-wrap: break-word;
-    font-size: clamp(1.05rem, 3.6vw, 1.18rem);
+    font-size: clamp(1.0rem, 3.4vw, 1.12rem);
     overflow-x: auto;
+    border-radius: 10px;
   }
   .sql-body .nowrap { white-space: nowrap; }
-  .aff-full { display: inline; }
-  .aff-short { display: none; }
   .op { color: #94A3B8; }
   .kw { color: #3730A3; font-weight: 500; }
   .str { color: #0E7490; }
@@ -292,9 +296,6 @@
   }
 
   @media (max-width: 768px) {
-    .aff-full { display: none; }
-    .aff-short { display: inline; }
-
     nav { padding: 0 4vw; justify-content: flex-end; }
     .nav-toggle { display: flex; }
 
@@ -387,7 +388,7 @@
     <div class="sql-body">
       <span class="nowrap"><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> database_researcher</span><br>
       <span class="kw">WHERE</span> name <span class="op">=</span> <span class="str">'Dalsu Choi'</span><br>
-      &nbsp;&nbsp;<span class="kw">AND</span> affiliation <span class="op">=</span> <span class="str"><span class="aff-full">'Hankuk University of Foreign Studies'</span><span class="aff-short">'HUFS'</span></span><br>
+      &nbsp;&nbsp;<span class="kw">AND</span> affiliation <span class="op">=</span> <span class="str">'HUFS'</span><br>
       &nbsp;&nbsp;<span class="kw">AND</span> interests <span class="op">@&gt;</span> <span class="kw">ARRAY</span>[<br>
       &nbsp;&nbsp;&nbsp;&nbsp;<span class="str">'Query Optimization'</span>,<br>
       &nbsp;&nbsp;&nbsp;&nbsp;<span class="str">'AI for Data Management'</span>,<br>
@@ -471,7 +472,7 @@
 
     <div class="pub-card">
       <a class="hover-link" href="https://patents.google.com/patent/US12393582B2/en" target="_blank" rel="noopener noreferrer"><div class="pub-title">Automatic Recompilation for Parameterized Queries</div></a>
-      <div class="pub-meta"><span class="me">Dalsu Choi</span>, Sanghee Lee, Mijin An · SAP Labs Korea<br><span class="pub-venue">U.S. Patent 12,393,582 (Filed: 2024-01-31 · Granted: 2025-08-19)<br>Korea / China / European / Japan Patent Application</span></div>
+      <div class="pub-meta"><span class="me">Dalsu Choi</span>, Sanghee Lee, Mijin An · SAP Labs Korea<br><span class="pub-venue">U.S. Patent 12,393,582 (Filed: 2024-01-31 · Granted: 2025-08-19)<br>China / European / Japan / Korea Patent Application</span></div>
     </div>
 
     <div class="pub-year-divider"><span class="pub-year-label">2023</span><div class="pub-year-line"></div></div>
